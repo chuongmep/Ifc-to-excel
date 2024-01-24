@@ -15,6 +15,12 @@ Demo Easy Convert Data From IFC To Excel
 ## Usage
 
 ```python
+# copyring by chuongmep
+import ifcopenshell
+import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
+#----#
 file_path = r"2022020320211122Wellness center Sama.ifc"
 ifc_file = ifcopenshell.open(file_path)
 classes = ifc_file.by_type("IfcProduct")
