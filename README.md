@@ -60,3 +60,5 @@ with pd.ExcelWriter(file_name, engine='openpyxl') as writer:
 ## CopyRight
 
 - Model by [https://openifcmodel.cs.auckland.ac.nz/](https://openifcmodel.cs.auckland.ac.nz/)
+
+- [IfcOpenShell 0.7.0 documentation](https://blenderbim.org/docs-python/autoapi/ifcopenshell/util/element/index.html#ifcopenshell.util.element.get_properties)
