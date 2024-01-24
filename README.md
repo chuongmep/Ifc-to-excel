@@ -7,9 +7,12 @@ Demo Easy Convert Data From IFC To Excel
 ## Installation
 
 ```bash
-%pip install ifcopenshell --upgrade
-%pip install openxml --upgrade
-%pip install pandas --upgrade
+%pip install -U
+%pip install ifcopenshell -U
+%pip install openpyxl -U
+%pip install pandas -U
+%pip install lark -U
+%pip install wordcloud -U
 ```
 
 ## Usage
@@ -20,25 +23,20 @@ import ifcopenshell
 import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
-#----#
+
 file_path = r"2022020320211122Wellness center Sama.ifc"
 ifc_file = ifcopenshell.open(file_path)
 classes = ifc_file.by_type("IfcProduct")
-# print all class name
+
 class_names = [class_name.is_a() for class_name in classes]
 class_names = list(set(class_names))
 file_name = "result.xlsx"
 with pd.ExcelWriter(file_name, engine='openpyxl') as writer:
     for class_name in class_names:
-        # get all objects in class
         objects = ifc_file.by_type(class_name)
-        
-        # Create a list to store data for the current class
-        
         result_df = pd.DataFrame()
         for object in objects:
             class_data = {}
-            # get dict of properties and values
             psets  = ifcopenshell.util.element.get_psets(object)
             for name, value in psets.items():
                 if isinstance(value, dict):
