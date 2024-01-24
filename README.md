@@ -57,6 +57,8 @@ with pd.ExcelWriter(file_name, engine='openpyxl') as writer:
             worksheet.column_dimensions[col[0].column_letter].width = 20
 ```
 
+![](docs/output.png)
+
 ## CopyRight
 
 - Model by [https://openifcmodel.cs.auckland.ac.nz/](https://openifcmodel.cs.auckland.ac.nz/)
