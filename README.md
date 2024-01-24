@@ -2,7 +2,7 @@
 
 Demo Easy Convert Data From IFC To Excel
 
-![](docs/Code_JRzuDVUdEQ.png)
+![](docs/model.png)
 
 ## Installation
 
