@@ -55,7 +55,27 @@ with pd.ExcelWriter(file_name, engine='openpyxl') as writer:
             worksheet.column_dimensions[col[0].column_letter].width = 20
 ```
 
+Visualize data use seaborn and matplotlib
+
+```py
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_theme(style="darkgrid")
+# visualize data df dictionary, y is class name, x is number of objects
+sns.barplot(y=list(df.keys()), x=[len(df[key]) for key in df.keys()])
+plt.xticks(rotation=90)
+plt.ylabel("Class name")
+plt.xlabel("Number of objects")
+plt.title("Visualization by Class")
+plt.show()
+```
 ![](docs/output.png)
+
+## Sample Files 
+
+- [IFC_To_Excel.ipynb](./IFC_To_Excel.ipynb) - Demo convert data from IFC to Excel
+- [Result.xlsx](./Result.xlsx) - Result file after convert
+
 
 ## CopyRight
 
